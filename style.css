@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+img{
+    height: 200px;
+    width: 200px;
+    opacity:0.8;
+}
+.cube{
+    height: 600px;
+    width: 600px;
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    z-index: -1;
+}
+.cube1{
+    height: 600px;
+    width: 600px;
+    position: absolute; 
+    transition:3s; 
+    -webkit-transform-style: preserve-3d;
+    -webkit-transform-origin:center center;
+    -webkit-transform:rotateY(37deg);
+}
+.surface1{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    position: absolute;
+    left: 200px;
+    top: 200px;
+}
+.surface2{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transform-origin:bottom;
+    -webkit-transform: rotateX(90deg);
+    position: absolute;
+    left: 200px;
+    top: 0;
+}
+.surface3{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transform-origin:right;
+    -webkit-transform: rotateY(-90deg);
+    position: absolute;
+    left: 0;
+    top: 200px;
+}
+.surface4{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transform-origin:left;
+    -webkit-transform: rotateY(90deg);
+    position: absolute;
+    right: 0;
+    top: 200px;
+}
+.surface5{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transform-origin:top;
+    -webkit-transform: rotateX(-90deg);
+    position: absolute;
+    left: 200px;
+    bottom: 0;
+}
+.surface6{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    -webkit-transform:translateZ(-200px) rotateX(180deg);
+    position: absolute;
+    left: 200px;
+    top: 200px;
+}
+.first{
+    height: 100px;
+    width: 100%;
+    position: relative;
+    background-color: rgb(255, 170, 170, 0.6);
+}
+.second{
+    height: 900px;
+    width: 100%;
+    position: relative;
+    background-image: url('img/86b0-hwsffza7766335.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+#hazy{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    background: rgb(255, 255, 255, 0.3);
+}
+#begin{
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 42%;
+    top: 300px;
+    outline: none;
+    border: solid 3px rgba(176, 219, 56, 0.671);
+    border-radius: 30px;
+    background-color: rgba(247, 181, 181, 0.4);
+    font-size: 30px;
+    font-family: 'YouYuan';
+    font-weight: bolder;
+    color: rgb(65, 135, 247);
+}
+#begin:hover{
+    cursor: pointer;
+}
+.interval{
+    display: block;
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    color: pink;
+    font-size: 14px;
+}
