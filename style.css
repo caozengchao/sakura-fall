@@ -90,7 +90,7 @@ img{
     background-color: rgb(255, 170, 170, 0.6);
 }
 .second{
-    height: 900px;
+    height: 1200px;
     width: 100%;
     position: absolute;
     top: 0;
@@ -123,17 +123,20 @@ img{
 #begin:hover{
     cursor: pointer;
 }
+#out:hover{
+    cursor: pointer;
+}
 .interval{
     display: block;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     position: absolute;
     background-color: rgba(255, 239, 213, 0.582);
     z-index: -2;
     left: 100px;
     top: 100px;
     color: rgb(243, 117, 138);
-    font-size: 14px;
+    font-size: 20px;
     overflow: hidden;
     word-wrap:break-word;
     padding-inline-start: 50px;

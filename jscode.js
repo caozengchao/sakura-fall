@@ -85,7 +85,7 @@ out.onmousedown = function(e) {
             (function (){
                 first[0].style.zIndex = -1;
                 out.style.zIndex = -1;
-                cubeFather.style.zIndex = 3;
+                cubeFather.style.zIndex = 4;
                 interval.style.zIndex = 3;
                 second[0].style.top = "0";
                 intervalValue = setInterval(function(){
@@ -94,7 +94,7 @@ out.onmousedown = function(e) {
                     index++;
                     if(index >= textArr.length)
                         clear(intervalValue);
-                },20)
+                },200)
             })();
         first[0].style.height = (e.clientY + 30) + "px";
     }
