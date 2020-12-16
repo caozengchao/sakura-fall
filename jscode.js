@@ -32,20 +32,83 @@ var text = "只有在你的微笑里，我才有呼吸，还贪恋着你的风�
 var textArr = text.split("");
 var index = 0;
 var intervalValue;
+var timeoutValue;
+var timeoutID;
+var intervalOut;
+var change = false;
+var second = document.getElementsByClassName("second");
+var first = document.getElementsByClassName("first");
 function clear(value) {
     clearInterval(value);
 }
+function timeoutFun() {
+    var i = 5;
+    intervalOut = setInterval(function() {
+        var temp = 100;
+        // temp = temp.split("px")[0];
+        console.log(temp);
+        first[0].style.height = (temp + i) + "px";
+        i = 0-i;
+    }, 200);
+}
+var out = document.getElementById("out");
 begin.onclick = function() {
+    out.style.zIndex = 3;
+    first[0].style.zIndex = 4;
+    second[0].style.top = "95px";
     begin.style.zIndex = -2;
     hazy.style.zIndex = -2;
-    cubeFather.style.zIndex = 1;
+    cubeFather.style.zIndex = -2;
     index = 0;
-    intervalValue = setInterval(function(){
-        var intervalText = interval.innerText;
-        interval.innerText = intervalText + textArr[index];
-        index++;
-        if(index >= textArr.length)
-            clear(intervalValue);
-    },50)
+    timeoutValue = setInterval(function() {
+        clearInterval(intervalOut);
+        timeoutID = setTimeout(function() {
+            change = true;
+            timeoutFun();
+        }, 1000);
+    }, 1000)
 }
-//心形以外生成空格
+out.onmousedown = function(e) {
+    e.preventDefault()
+    if(change){
+        clearInterval(timeoutValue);
+        clearTimeout(timeoutID);
+        clearInterval(intervalOut);
+    }
+    else{
+        clearInterval(timeoutValue);
+        clearTimeout(timeoutID);
+    }
+    out.onmousemove = function (e){
+        e.preventDefault()
+        if(e.clientY >= 600)
+            (function (){
+                first[0].style.zIndex = -1;
+                out.style.zIndex = -1;
+                cubeFather.style.zIndex = 3;
+                interval.style.zIndex = 3;
+                second[0].style.top = "0";
+                intervalValue = setInterval(function(){
+                    var intervalText = interval.innerText;
+                    interval.innerText = intervalText + textArr[index];
+                    index++;
+                    if(index >= textArr.length)
+                        clear(intervalValue);
+                },20)
+            })();
+        first[0].style.height = (e.clientY + 30) + "px";
+    }
+}
+out.onmouseup = function() {
+    if(change){
+        clearInterval(timeoutValue);
+        clearTimeout(timeoutID);
+        clearInterval(intervalOut);
+    }
+    else{
+        clearInterval(timeoutValue);
+        clearTimeout(timeoutID);
+    }
+    out.onmousemove = null;
+    first[0].style.height = "100px";
+}
